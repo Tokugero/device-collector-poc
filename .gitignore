@@ -1,4 +1,2 @@
-**/config/*
 **/data/*
-!prom-snmp-stack/prometheus-proxy/config/*
-!prom-snmp-stack/prometheusdb/config/prometheus.yml
+**/influxdb/config/influx-configs
