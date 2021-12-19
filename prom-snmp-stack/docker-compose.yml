@@ -10,6 +10,8 @@ services:
             - GF_INSTALL_PLUGINS=grafana-clock-panel
     prometheusdb:
         build: prometheusdb/
+        ports:
+            - "9090:9090"
         volumes:
             - ./prometheusdb/config:/etc/prometheus/
             - prometheusdb:/prometheus
@@ -21,18 +23,22 @@ services:
         build: snmp/
         volumes:
             - ./snmp/node1/config:/etc/snmp
+            - ./snmp/scripts:/usr/sbin/scripts
     node2:
         build: snmp/
         volumes:
-            - ./snmp/node2/config:/etc/snmp      
+            - ./snmp/node2/config:/etc/snmp
+            - ./snmp/scripts:/usr/sbin/scripts            
     node3:
         build: snmp/
         volumes:
-            - ./snmp/node3/config:/etc/snmp      
+            - ./snmp/node3/config:/etc/snmp
+            - ./snmp/scripts:/usr/sbin/scripts   
     node4:
         build: snmp/
         volumes:
             - ./snmp/node4/config:/etc/snmp
+            - ./snmp/scripts:/usr/sbin/scripts            
 volumes: 
   prometheusdb:
   grafana:

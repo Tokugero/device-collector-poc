@@ -1,4 +1,11 @@
-# This file was auto-generated using snmp_exporter generator
+custom:
+  # Using "private OID" space
+  get:
+  - 1.3.9950.1.1
+  metrics:
+  - name: randmetrics
+    oid: 1.3.9950.1.1
+    type: gauge
 apcups:
   walk:
   - 1.3.6.1.2.1.2
