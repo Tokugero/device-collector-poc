@@ -1,0 +1,1 @@
+This folder contains the "remote devices" and their respective monitoring configurations.

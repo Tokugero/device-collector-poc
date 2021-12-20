@@ -1,0 +1,48 @@
+services:
+    grafana:
+        build: grafana/
+        ports: 
+            - "3000:3000"
+        volumes:
+            - grafana:/var/lib/grafana
+            - ./grafana/provisioning:/etc/grafana/provisioning
+        environment:
+            - GF_INSTALL_PLUGINS=grafana-clock-panel
+    influxdb:
+        build: influxdb/
+        volumes:
+            - influxdb:/var/lib/influxdb2
+        ports:
+            - "8086:8086"
+        environment:
+            - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=initadmintoken
+            - DOCKER_INFLUXDB_INIT_BUCKET=telegraf
+            - DOCKER_INFLUXDB_INIT_MODE=setup
+            - DOCKER_INFLUXDB_INIT_ORG=admin
+            - DOCKER_INFLUXDB_INIT_PASSWORD=initpassword
+            - DOCKER_INFLUXDB_INIT_RETENTION=1w # One Week
+            - DOCKER_INFLUXDB_INIT_USERNAME=initusername
+    node1:
+        build: telegraf/
+        volumes:
+            - ./telegraf/node1/config:/etc/telegraf
+            - ./telegraf/scripts:/usr/local/scripts
+    node2:
+        build: telegraf/
+        volumes:
+            - ./telegraf/node2/config:/etc/telegraf
+            - ./telegraf/scripts:/usr/local/scripts
+    node3:
+        build: telegraf/
+        volumes:
+            - ./telegraf/node3/config:/etc/telegraf
+            - ./telegraf/scripts:/usr/local/scripts
+    node4:
+        build: telegraf/
+        volumes:
+            - ./telegraf/node4/config:/etc/telegraf
+            - ./telegraf/scripts:/usr/local/scripts
+            
+volumes: 
+  influxdb:
+  grafana:
