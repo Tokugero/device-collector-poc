@@ -44,3 +44,40 @@ Many pre-made products already support SNMP and have well defined documentation 
 ### Cons
 
 SNMP requires extrenuous research and testing for even the simplest metrics collections due to its long list of [opinions](https://stackoverflow.com/questions/802050/what-is-opinionated-software) and baked-in assumptions. 
+
+## Getting Started
+
+### Pre-requisites
+
+* [Git](https://git-scm.com/downloads)
+* [Docker Desktop](https://docs.docker.com/get-docker/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Instructions
+
+1. Download all these links
+1. Install all these links as appropriate for your OS
+1. Clone this repository
+    ```bash
+    mkdir -p ~/repos/github/Tokugero/
+    cd ~/repos/github/Tokugero/
+    git clone git@github.com:Tokugero/device-collector-poc.git
+    cd device-collector-poc
+    ```
+1. Browse to one of these folders:
+    - [prom-snmp-stack](./prom-snmp-stack)  
+    - [tig-stack](./tig-stack)  
+    - Example:
+        ```bash
+        cd tig-stack
+        ```
+1. Follow instructions on the respective README.md
+    - Example:
+        ```bash
+        docker-compose up -d
+        ```
+1. Clean up after yourself
+    - Example:
+        ```bash
+        docker-compose down -v
+        ```

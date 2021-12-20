@@ -1,10 +1,13 @@
+# Custom was made by Tokugero by hand, which is not best practice.
 custom:
-  # Using "private OID" space
+  # Using "private OID" space, get is the applicable response here since we don't need to discover all our sweet data.
   get:
+  # This is an arbitrary OID that was picked out of the air of "private OID" space
   - 1.3.9950.1.1
   metrics:
   - name: randmetrics
     oid: 1.3.9950.1.1
+    # Matching the data type that we defined in our randmetrics.sh script
     type: gauge
 apcups:
   walk:
