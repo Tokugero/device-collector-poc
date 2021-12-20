@@ -24,6 +24,9 @@ docker-compose up -d
 
 ```
 cd tig-stack
+# To keep your current work
+docker-compose down
+# To completely destroy the environment and start from scratch next time
 docker-compose down -v
 ```
 
