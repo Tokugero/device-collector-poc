@@ -17,6 +17,8 @@ services:
             - prometheusdb:/prometheus
     prometheus-proxy:
         build: prometheus-proxy/
+        ports: 
+            - "9116:9116"
         volumes:
             - ./prometheus-proxy/config:/opt/config/snmp_exporter
     node1:

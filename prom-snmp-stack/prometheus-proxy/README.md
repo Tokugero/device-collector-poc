@@ -1,0 +1,1 @@
+This folder contains the configurations and snmp_exporter application for the proxy service. This is responsible for receiving requests from Prometheus DB and pulling data from the destination SNMP agents.

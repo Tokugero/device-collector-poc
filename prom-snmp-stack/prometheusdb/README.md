@@ -1,0 +1,1 @@
+This folder is for the configuration of the Prometheus DB, and the Prometheus data scraper. In this container, they are the same - but you can separate these responsibilites in production environments.

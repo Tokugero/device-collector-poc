@@ -1,0 +1,1 @@
+There's not much here as all the configurations are done in the [docker-compose.yml](../docker-compose.yml)

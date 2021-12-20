@@ -1,5 +1,1 @@
-# snmp
-
-## Purpose
-
-This is to house the various node collector container directories where snmp is the primary collector.
+This folder contains the "remote devices" and their respective monitoring configurations.
